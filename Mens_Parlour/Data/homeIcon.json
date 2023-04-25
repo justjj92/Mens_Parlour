@@ -1,0 +1,52 @@
+[
+    {
+        "id" : 1,
+        "name" : "book",
+        "image" : "book",
+        "destination": {
+            "type": "webView",
+            "url": "https://getsquire.com/booking/book/mens-parlour-simi-valley?fbclid=PAAabDvHN_9UAJR0kNOEoxQ7bIfOCKv4d4zj0fMykaJFmID34UUWEe1uZplrc"
+        }
+    },
+    {
+        "id" : 2,
+        "name" : "staff",
+        "image" : "staff",
+        "destination": {
+            "type": "staff"
+            }
+    },
+    {
+        "id" : 3,
+        "name" : "pod",
+        "image" : "pod",
+        "destination": {
+            "type": "detail"
+        }
+    },
+    {
+        "id" : 4,
+        "name" : "social",
+        "image" : "social",
+        "destination": {
+            "type": "webView",
+            "url": "https://www.instagram.com/mensparlourbarbershop/"
+        }
+    },
+    {
+        "id" : 5,
+        "name" : "store",
+        "image" : "store",
+        "destination": {
+            "type": "other"
+            }
+    },
+    {
+        "id" : 6,
+        "name" : "info",
+        "image" : "info",
+        "destination": {
+            "type": "info"
+            }
+        }
+]

@@ -2,36 +2,65 @@
   {
     "id" : 1,
     "name" : "Marco",
-    "image" : "marco"
-  },
+    "image" : "marco",
+    "destination": {
+    "type": "staffWebView",
+    "url": "https://getsquire.com/booking/book/mens-parlour-simi-valley/barber/marco-gutierrez-1/services"
+    }
+ },
   {
     "id" : 2,
     "name" : "Ruben",
-    "image" : "ruben"
+    "image" : "ruben",
+    "destination": {
+    "type": "staffWebView",
+    "url": "https://getsquire.com/booking/book/mens-parlour-simi-valley/barber/ruben-55/services"
+    }
   },
   {
     "id" : 3,
     "name" : "Justin Whang",
-    "image" : "justinhwang"
+    "image" : "justinhwang",
+    "destination": {
+    "type": "staffWebView",
+    "url": "https://getsquire.com/booking/book/mens-parlour-simi-valley/barber/justin-h-6/services"
+    }
   },
   {
     "id" : 4,
     "name" : "JR Cruz",
-    "image" : "jrcruz"
+    "image" : "jrcruz",
+    "destination": {
+    "type": "staffWebView",
+    "url": "https://getsquire.com/booking/book/mens-parlour-simi-valley/barber/jr-cruz/services"
+    }
   },
   {
     "id" : 5,
     "name" : "Gustavo",
-    "image" : "gustavo"
+    "image" : "gustavo",
+    "destination": {
+    "type": "staffWebView",
+    "url": "https://getsquire.com/booking/book/mens-parlour-simi-valley/barber/gustavo-aguirre/services"
+    }
   },
   {
     "id" : 6,
     "name" : "Desean",
-    "image" : "desean"
-  },
+    "image" : "desean",
+    "destination": {
+    "type": "staffWebView",
+    "url": "https://getsquire.com/booking/book/mens-parlour-simi-valley/barber/desean/services"
+    }
+},
   {
     "id" : 7,
     "name" : "Cynthia",
-    "image" : "cynthia"
+    "image" : "cynthia",
+    "destination": {
+    "type": "staffWebView",
+    "url": "https://getsquire.com/booking/book/mens-parlour-simi-valley/barber/cynthia-27/services"
   }
+}
+  
 ]

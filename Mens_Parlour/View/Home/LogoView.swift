@@ -9,10 +9,16 @@ import SwiftUI
 
 struct LogoView: View {
     var body: some View {
-        Text("Men's Parlour".uppercased())
-            .font(.system(size: 40))
-            .fontWeight(.black)
+        HStack {
+            Image("logo")
+                .resizable()
+                .scaledToFit()
+                .frame(height: 40)
+            Text("Men's Parlour".uppercased())
+                .font(.system(size: 40))
+                .fontWeight(.black)
             .foregroundColor(.black)
+        }
     }
 }
 

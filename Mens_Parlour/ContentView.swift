@@ -7,59 +7,54 @@
 
 import SwiftUI
 
-
 struct ContentView: View {
-    
-    //MARK: - PROPERTY
-    
-    
-    //MARK: - BODY
     
     var body: some View {
         ZStack {
             NavigationStack {
+                LogoView()
                 LazyVGrid(columns: gridLayout, spacing: 5) {
-                  ForEach(icons) { icon in
-                      Button(action: {}) {
-                          HomeIconView(icon: icon)
-                      }
-//                      .padding(-5)
-                      .buttonStyle(PlainButtonStyle())
-                  } //: LOOP
-                } //: GRID
-            }
-            .safeAreaInset(edge: .top) {
-                NavigationBarView()
-                    .padding(.top)
-                    .background(Color.white)
-                    .shadow(color: Color.black.opacity(0.05), radius: 5, x: 0, y: 5)
-                    
-            }
-            .safeAreaInset(edge: .bottom) {
-                FooterView()
-                    .padding(.bottom)
-                    .background(Color.white)
+                    ForEach(icons) { icon in
+                        NavigationLink(value: icon) {
+                            HomeIconView(icon: icon)
+                        }
+                    }
+                }
+                // This is where the logic for navigation is applied
+                .navigationDestination(for: Icon.self) { icon in
+                    switch icon.destination.type {
+                    case .webView:
+                        SafariView(url: icon.destination.url!)
+                    case .detail:
+                        DetailView()
+                    case .info:
+                        InfoView()
+                    case .other:
+                        OtherView()
+                    case .staff:
+                        StaffView()
+                    }
+                }
             }
         }
     }
 }
 
-//struct ItemButtonStyle: ButtonStyle {
-//    let cornerRadius: CGFloat
-//
-//    func makeBody(configuration: Configuration) -> some View {
-//        ZStack {
-//            configuration.label
-//
-//            if configuration.isPressed {
-//                Color.black.opacity(0.2)
-//            }
-//        }
-//        .clipShape(RoundedRectangle(cornerRadius: 20))
-//        .shadow(color: Color.black.opacity(0.2), radius: 5, y: 10 )
-//    }
-//}
-
+ 
+// I created dummy views just to showcase what you could do
+// Obviously replace them with the appropriate ones when you can
+// I've used your Safari View just because I wanted you to see what the web view could look like
+struct DetailView: View {
+    var body: some View {
+        Text("Coming Soon!")
+    }
+}
+ 
+struct OtherView: View {
+    var body: some View {
+        Text("Shop is Coming Soon!")
+    }
+}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

@@ -17,9 +17,15 @@ struct NavigationBarView: View {
     
     var body: some View {
         HStack {
-            LogoImageView()
+            Image("logo")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 30, height: 30, alignment: .center)
             
-            LogoView()
+            Text("Men's Parlour".uppercased())
+                .font(.system(size: 40))
+                .fontWeight(.black)
+                .foregroundColor(.black)
               .opacity(isAnimated ? 1 : 0)
               .offset(x: 0, y: isAnimated ? 0 : -25)
               .onAppear(perform: {

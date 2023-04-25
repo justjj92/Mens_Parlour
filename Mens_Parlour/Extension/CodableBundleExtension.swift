@@ -8,27 +8,25 @@
 import Foundation
 
 extension Bundle {
-  func decode<T: Codable>(_ file: String) -> T {
-    // 1. Locate the JSON file
-    guard let url = self.url(forResource: file, withExtension: nil) else {
-      fatalError("Failed to locate \(file) in bundle.")
-    }
-    
-    // 2. Create a property for the data
-    guard let data = try? Data(contentsOf: url) else {
-      fatalError("Failed to load \(file) from bundle.")
-    }
-    
-    // 3. Create a decoder
-    let decoder = JSONDecoder()
-    
-    // 4. Create a property for the decoded data
-    guard let decodedData = try? decoder.decode(T.self, from: data) else {
-      fatalError("Failed to decode \(file) from bundle.")
-    }
-    
-    // 5. Return the ready-to-use data
-    return decodedData
+  func decodeJson <T:Decodable> (_ type : T.Type , fileName : String,
+     dateDecodingStrategy: JSONDecoder.DateDecodingStrategy = .deferredToDate,
+     keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .useDefaultKeys) -> T {
+        
+     guard let url = self.url(forResource: fileName, withExtension: nil) else {
+         fatalError("Failed to load file ")
+     }
+        
+     do {
+        let jsonData = try Data(contentsOf: url)
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = dateDecodingStrategy
+        decoder.keyDecodingStrategy = keyDecodingStrategy
+            
+        let result = try decoder.decode(type, from: jsonData)
+        return result
+     }
+     catch {
+        fatalError("err:\(error)")
+     }
   }
 }
-

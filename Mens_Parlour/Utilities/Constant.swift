@@ -4,12 +4,17 @@
 //
 //  Created by J J on 3/27/23.
 //
-
+import Foundation
 import SwiftUI
 
 // DATA
-let icons: [Icon] = Bundle.main.decode("homeIcon.json")
-let staffs: [Staff] = Bundle.main.decode("staff.json")
+//let icons: [Icon] = Bundle.main.decode("homeIcon.json")
+//let staffs : [Staff] = Bundle.main.decode("staff.json")
+let icons = Bundle.main.decodeJson(
+    [Icon].self,fileName: "homeIcon.json")
+let staffs = Bundle.main.decodeJson(
+    [Staff].self,fileName: "staff.json")
+
 
 // COLOR
 
@@ -27,6 +32,10 @@ var gridLayout: [GridItem] {
 // UX
 
 let feedback = UIImpactFeedbackGenerator(style: .medium)
+
+// ENUM
+
+
 
 // API
 // IMAGE
